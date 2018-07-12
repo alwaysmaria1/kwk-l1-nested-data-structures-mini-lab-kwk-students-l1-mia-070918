@@ -7,9 +7,42 @@ ingredients = [
 ]
 
 def sandwich_request(ingredients, order) 
-  # your code here!
-end
+  order.each do |x|
+    found = ingredients.find do |arr|
+      arr.find do |y| 
+        x == y
+      end
+    end
+    if !found
+      return false
+    end
+    return true
+  end
+      
+    
+  
+  
+  
+  
+  # ingredients.each do |x|
+  #   counter=0
+  #   x.each do |y|
+  #     if y==order[counter]
+  #       puts "true"
+  #     else 
+  #       puts "false"
+  #     end
+  #   end
+  # end
+end 
 
+puts sandwich_request(ingredients,["rye","tofu","cheddar"])
+      
+      
+    
+  
+
+ 
 # example city_info hash
 cities = {
   :new_york => { 
@@ -35,5 +68,5 @@ cities = {
 }
 
 def city_populations(cities)
-  # your code here!
+  cities.sum { |city| city[:population] }
 end
