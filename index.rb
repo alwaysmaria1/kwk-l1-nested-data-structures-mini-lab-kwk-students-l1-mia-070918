@@ -70,3 +70,4 @@ cities = {
 def city_populations(cities)
   cities.sum { |city| city[:population] }
 end
+puts city_populations(cities)
